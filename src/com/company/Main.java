@@ -44,6 +44,20 @@ public class Main {
 
         //9. Dar de baja un curso
         dhm.bajaCurso(20001);
+
+
+        //Pruebas del destacado: inscribir a los alumnos de dicha lista en el curso Mobile Android
+        LectorDeArchivosCSV lector = new LectorDeArchivosCSV();
+        lector.leerArchivo();
+        ArrayList<Alumno> listaAlumnos = lector.getListaAlumnos();
+
+        dhm.altaCurso("Mobile Android", 20003,30);
+
+        for (Alumno a: listaAlumnos
+             ) {
+            dhm.altaAlumno(a.getNombre(),a.getApellido(),a.getCodAlumno());
+            dhm.inscribirAlumno(a.getCodAlumno(),20003);
+        }
     }
 }
 /* Parte K: 1. ¿Cómo modificaría el diagrama de clases para que se le pueda consultar a un alumno a qué

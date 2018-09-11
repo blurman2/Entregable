@@ -57,6 +57,10 @@ public class Curso {
         this.profeAdjunto = profeAdjunto;
     }
 
+    public void setCupo(Integer cupo) {
+        this.cupo = cupo;
+    }
+
     //Métodos
     @Override
     public boolean equals(Object obj){
